@@ -183,7 +183,7 @@ ShowPlayerDrugs(playerid, toplayer)
 	{
 		if(Player_Drugs[playerid][d][dID] != -1)
 		{
-			SendClientMessageEx(toplayer, -1, "{FF6347}[ {FFFFFF}%d. %s (%s: %.1f%s / %.1f%s) (Strength: %.0f) {FF6347}]",
+			SendClientMessageEx(toplayer, -1, "{FF6347}[ {FFFFFF}%d. %s (%s: %.1f%s / %.1f%s) (força: %.0f) {FF6347}]",
 			d + 1, s_NAMES[ Player_Drugs[playerid][d][dStorage] ], d_DATA[ Player_Drugs[playerid][d][dType] ][dName], Player_Drugs[playerid][d][dAmount], (d_DATA[ Player_Drugs[playerid][d][dType] ][IsPill] == true) ? (" Pills") : ("g"), ReturnStorageCapacity(Player_Drugs[playerid][d][dStorage], Player_Drugs[playerid][d][dType]), (d_DATA[ Player_Drugs[playerid][d][dType] ][IsPill] == true) ? (" Pills") : ("g"), Player_Drugs[playerid][d][dStrength]);
 
 			count++;
