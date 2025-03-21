@@ -1,7 +1,7 @@
 CMD:respawnrental(playerid, params[])
 {
 	if(PlayerData[playerid][pAdmin] < 1)
-		return SendUnauthMessage(playerid, "Unauthorized.");
+		return SendUnauthMessage(playerid, "Unauthorized."); //O cÃ³digo 51 Ã© um cÃ³digo de erro que indica que a transaÃ§Ã£o com cartÃ£o de crÃ©dito nÃ£o foi autorizada. 
 
 	if(!IsPlayerInAnyVehicle(playerid) || GetPlayerState(playerid) != PLAYER_STATE_DRIVER)
 	    return SendErrorMessage(playerid, "You need to be in the driver seat of a vehicle.");
@@ -28,7 +28,7 @@ CMD:respawnrental(playerid, params[])
 CMD:createcar(playerid, params[])
 {
  	if(PlayerData[playerid][pAdmin] < 4)
-    	return SendErrorMessage(playerid, "Você não está autorizado a usar este comando.");
+    	return SendErrorMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
     
     new userid, model, color1, color2, lock, immob, alarm, xm;
     	
@@ -77,7 +77,7 @@ YCMD:aduty(playerid, params[], help) = adminduty;
 CMD:adminduty(playerid, params[])
 {
  	if(PlayerData[playerid][pAdmin] < 1)
-    	return SendErrorMessage(playerid, "Você não está autorizado a usar este comando.");
+    	return SendErrorMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	if(TesterDuty{playerid})
 	    return SendErrorMessage(playerid, "You can't do that while on tester duty.");
@@ -121,7 +121,7 @@ CMD:adminduty(playerid, params[])
 CMD:kick(playerid, params[])
 {
     if(PlayerData[playerid][pAdmin] < 1)
-		return SendUnauthMessage(playerid, "Você não está autorizado a usar este comando.");
+		return SendUnauthMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	new userid, reason[128];
 
@@ -159,7 +159,7 @@ CMD:kick(playerid, params[])
 CMD:ban(playerid, params[])
 {
     if(PlayerData[playerid][pAdmin] < 1)
-		return SendUnauthMessage(playerid, "Você não está autorizado a usar este comando.");
+		return SendUnauthMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	new userid, reason[128], ip[16];
 
@@ -202,7 +202,7 @@ CMD:ban(playerid, params[])
 CMD:unban(playerid, params[])
 {
 	if(PlayerData[playerid][pAdmin] < 1)
-		return SendUnauthMessage(playerid, "Você não está autorizado a usar este comando.");
+		return SendUnauthMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	if(isnull(params))
 		return SendSyntaxMessage(playerid, "/unban [Firstname_Lastname]");
@@ -218,7 +218,7 @@ CMD:unban(playerid, params[])
 CMD:unbanip(playerid, params[])
 {
 	if(PlayerData[playerid][pAdmin] < 1)
-		return SendUnauthMessage(playerid, "Você não está autorizado a usar este comando.");
+		return SendUnauthMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	if(isnull(params))
     	return SendSyntaxMessage(playerid, "/unbanip [IP address]");
@@ -239,7 +239,7 @@ CMD:unbanip(playerid, params[])
 CMD:getip(playerid, params[])
 {
     if(PlayerData[playerid][pAdmin] < 1)
-	    return SendUnauthMessage(playerid, "Você não está autorizado a usar este comando.");
+	    return SendUnauthMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	new
 	    userid
@@ -261,7 +261,7 @@ CMD:getip(playerid, params[])
 CMD:arecord(playerid, params[])
 {
 	if(PlayerData[playerid][pAdmin] < 1)
-		return SendUnauthMessage(playerid, "Você não está autorizado a usar este comando.");
+		return SendUnauthMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	new
 		userid
@@ -344,7 +344,7 @@ CMD:arecord(playerid, params[])
 CMD:ajailed(playerid, params[])
 {
 	if(PlayerData[playerid][pAdmin] < 1)
-		return SendUnauthMessage(playerid, "Você não está autorizado a usar este comando.");
+		return SendUnauthMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	SendClientMessage(playerid, COLOR_LIGHTRED, "Players ajailed:");
 
@@ -368,7 +368,7 @@ CMD:ajailed(playerid, params[])
 CMD:ajail(playerid, params[])
 {
 	if(PlayerData[playerid][pAdmin] < 1)
-		return SendUnauthMessage(playerid, "Você não está autorizado a usar este comando.");
+		return SendUnauthMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	new userid, time, reason[128];
 
@@ -418,7 +418,7 @@ CMD:ajail(playerid, params[])
 CMD:unjail(playerid, params[])
 {
 	if(PlayerData[playerid][pAdmin] < 1)
-		return SendUnauthMessage(playerid, "Você não está autorizado a usar este comando.");
+		return SendUnauthMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	new
 	    userid;
@@ -442,7 +442,7 @@ CMD:unjail(playerid, params[])
 CMD:makedonator(playerid, params[])
 {
 	if(PlayerData[playerid][pAdmin] < 4)
-		return SendErrorMessage(playerid, "Você não está autorizado a usar este comando.");
+		return SendErrorMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	new userid, level, time;
 
@@ -491,7 +491,7 @@ CMD:flipcar(playerid, params[])
 	new vehicleid;
 
     if(PlayerData[playerid][pAdmin] < 1)
-		return SendErrorMessage(playerid, "Você não está autorizado a usar este comando.");
+		return SendErrorMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	if(sscanf(params, "d", vehicleid))
 	    return SendSyntaxMessage(playerid, "/flipcar [vehicleid]");
@@ -514,7 +514,7 @@ YCMD:awp(playerid, params[], help) = watchplayer;
 CMD:watchplayer(playerid, params[])
 {
 	if(PlayerData[playerid][pAdmin] < 1)
-    	return SendErrorMessage(playerid, "Você não está autorizado a usar este comando.");
+    	return SendErrorMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
  	new
         userid
@@ -570,7 +570,7 @@ YCMD:awc(playerid, params[], help) = watchcar;
 CMD:watchcar(playerid, params[])
 {
 	if(PlayerData[playerid][pAdmin] < 1)
-    	return SendErrorMessage(playerid, "Você não está autorizado a usar este comando.");
+    	return SendErrorMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	new vehicleid = GetPlayerVehicleID(playerid);
 
@@ -601,7 +601,7 @@ YCMD:specoff(playerid, params[], help) = watchoff;
 CMD:watchoff(playerid, params[])
 {
 	if(PlayerData[playerid][pAdmin] < 1)
-    	return SendErrorMessage(playerid, "Você não está autorizado a usar este comando.");
+    	return SendErrorMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	if(PlayerData[playerid][pSpectating] == INVALID_PLAYER_ID)
 		return SendClientMessage(playerid, COLOR_GREY, "You're not spectating anyone.");
@@ -622,7 +622,7 @@ CMD:watchoff(playerid, params[])
 CMD:setint(playerid, params[])
 {
 	if(PlayerData[playerid][pAdmin] < 1)
-		return SendErrorMessage(playerid, "Você não está autorizado a usar este comando.");
+		return SendErrorMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	new userid, interior;
 
@@ -641,7 +641,7 @@ CMD:setint(playerid, params[])
 CMD:setworld(playerid, params[])
 {
 	if(PlayerData[playerid][pAdmin] < 1)
-		return SendErrorMessage(playerid, "Você não está autorizado a usar este comando.");
+		return SendErrorMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	new userid, world;
 
@@ -660,7 +660,7 @@ CMD:setworld(playerid, params[])
 CMD:getworld(playerid, params[])
 {
 	if(PlayerData[playerid][pAdmin] < 1)
-		return SendErrorMessage(playerid, "Você não está autorizado a usar este comando.");
+		return SendErrorMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	SendClientMessageEx(playerid, COLOR_GRAD1, " Your current virtual world is %d.", GetPlayerVirtualWorld(playerid));
 	return true;
@@ -682,7 +682,7 @@ CMD:re(playerid, params[])
 	if(userid != INVALID_PLAYER_ID && IsPlayerConnected(userid))
 	{
 	    if(isnull(inputSec))
-	        return SendClientMessage(playerid, COLOR_LIGHTRED, "Sua mensagem é muito curta ou muito longa.");
+	        return SendClientMessage(playerid, COLOR_LIGHTRED, "Sua mensagem ï¿½ muito curta ou muito longa.");
 
 	    PlayerData[playerid][pReportPlayer] = userid;
 		strcpy(PlayerData[playerid][pReportMessage], inputSec, 128);
@@ -690,7 +690,7 @@ CMD:re(playerid, params[])
 	else
 	{
 	    if(isnull(params))
-	        return SendClientMessage(playerid, COLOR_LIGHTRED, "Sua mensagem é muito curta ou muito longa.");
+	        return SendClientMessage(playerid, COLOR_LIGHTRED, "Sua mensagem ï¿½ muito curta ou muito longa.");
 
 	    PlayerData[playerid][pReportPlayer] = INVALID_PLAYER_ID;
 		strcpy(PlayerData[playerid][pReportMessage], params, 128);
@@ -698,19 +698,19 @@ CMD:re(playerid, params[])
 
 	new reportBody[1500];
 
-	format(reportBody, sizeof(reportBody), "{FF0000}AVISO:\n{FFFFFF}Você está prestes a enviar o seguinte relatório para todos os administradores online: %s\n\n", PlayerData[playerid][pReportMessage]);
+	format(reportBody, sizeof(reportBody), "{FF0000}AVISO:\n{FFFFFF}Vocï¿½ estï¿½ prestes a enviar o seguinte relatï¿½rio para todos os administradores online: %s\n\n", PlayerData[playerid][pReportMessage]);
 
-	strcat(reportBody, "- Relatar ações que não estão acontecendo no momento é extremamente difícil para os administradores online lidarem imediatamente, pois nenhuma prova é apresentada a eles..\n");
-	strcat(reportBody, "É altamente recomendável ir até os fóruns e enviar um relatório no fórum com evidências, em vez disso.\n\n");
-	strcat(reportBody, "- É importante que você não envie relatórios dentro do jogo sobre coisas que são melhor tratadas nos fóruns, como as mencionadas anteriormente e/ou problemas com doações.\n");
-	strcat(reportBody, "Solicitações de refundos após rollbacks do servidor, apelos de banimento e assim por diante. Se você acha que sofreu DeathMatch, considere primeiro perguntar à parte responsável pela morte o motivo.\n\n");
-	strcat(reportBody, "- Por favor, lembre-se de que, se você está relatando um jogador que acredita que ele tenha violado as regras ou um bug que possa ter encontrado, as capturas de tela são a melhor chance de provar isso.\n");
-	strcat(reportBody, "Incentivamos que você tire capturas de tela antes e depois de fazer o relatório.\n\n");
-	strcat(reportBody, "- Caso você solicite um teletransporte, descongelamento, tapa ou qualquer outra situação semelhante, deve informar o motivo. De maneira geral, é necessário ser descritivo em seus relatórios.\n");
-	strcat(reportBody, "- Por favor, não envie relatórios em excesso. Tenha paciência e um administrador irá ajudá-lo assim que possível.\n");
-	strcat(reportBody, "Você não deve tentar interromper ou atrasar o roleplay, a menos que esteja recebendo assistência de um administrador ou o outro jogador esteja te deixando sexualmente desconfortável.");
+	strcat(reportBody, "- Relatar aï¿½ï¿½es que nï¿½o estï¿½o acontecendo no momento ï¿½ extremamente difï¿½cil para os administradores online lidarem imediatamente, pois nenhuma prova ï¿½ apresentada a eles..\n");
+	strcat(reportBody, "ï¿½ altamente recomendï¿½vel ir atï¿½ os fï¿½runs e enviar um relatï¿½rio no fï¿½rum com evidï¿½ncias, em vez disso.\n\n");
+	strcat(reportBody, "- ï¿½ importante que vocï¿½ nï¿½o envie relatï¿½rios dentro do jogo sobre coisas que sï¿½o melhor tratadas nos fï¿½runs, como as mencionadas anteriormente e/ou problemas com doaï¿½ï¿½es.\n");
+	strcat(reportBody, "Solicitaï¿½ï¿½es de refundos apï¿½s rollbacks do servidor, apelos de banimento e assim por diante. Se vocï¿½ acha que sofreu DeathMatch, considere primeiro perguntar ï¿½ parte responsï¿½vel pela morte o motivo.\n\n");
+	strcat(reportBody, "- Por favor, lembre-se de que, se vocï¿½ estï¿½ relatando um jogador que acredita que ele tenha violado as regras ou um bug que possa ter encontrado, as capturas de tela sï¿½o a melhor chance de provar isso.\n");
+	strcat(reportBody, "Incentivamos que vocï¿½ tire capturas de tela antes e depois de fazer o relatï¿½rio.\n\n");
+	strcat(reportBody, "- Caso vocï¿½ solicite um teletransporte, descongelamento, tapa ou qualquer outra situaï¿½ï¿½o semelhante, deve informar o motivo. De maneira geral, ï¿½ necessï¿½rio ser descritivo em seus relatï¿½rios.\n");
+	strcat(reportBody, "- Por favor, nï¿½o envie relatï¿½rios em excesso. Tenha paciï¿½ncia e um administrador irï¿½ ajudï¿½-lo assim que possï¿½vel.\n");
+	strcat(reportBody, "Vocï¿½ nï¿½o deve tentar interromper ou atrasar o roleplay, a menos que esteja recebendo assistï¿½ncia de um administrador ou o outro jogador esteja te deixando sexualmente desconfortï¿½vel.");
 
-	Dialog_Show(playerid, ReportConfirm, DIALOG_STYLE_MSGBOX, "Aviso, você está prestes a enviar um /re", reportBody, "Continuar", "Não enviar");
+	Dialog_Show(playerid, ReportConfirm, DIALOG_STYLE_MSGBOX, "Aviso, vocï¿½ estï¿½ prestes a enviar um /re", reportBody, "Continuar", "Nï¿½o enviar");
 	return true;
 }
 
@@ -755,7 +755,7 @@ stock SaveReport(id, by, player, text[])
 CMD:ar(playerid, params[])
 {
 	if(PlayerData[playerid][pAdmin] < 1)
-		return SendErrorMessage(playerid, "Você não está autorizado a usar este comando.");
+		return SendErrorMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	new
 		userid
@@ -793,7 +793,7 @@ CMD:ar(playerid, params[])
 CMD:dr(playerid, params[])
 {
 	if(PlayerData[playerid][pAdmin] < 1)
-		return SendErrorMessage(playerid, "Você não está autorizado a usar este comando.");
+		return SendErrorMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	new userid, reason[128];
 
@@ -831,7 +831,7 @@ CMD:dr(playerid, params[])
 CMD:reports(playerid, params[])
 {
 	if(PlayerData[playerid][pAdmin] < 1)
-		return SendErrorMessage(playerid, "Você não está autorizado a usar este comando.");
+		return SendErrorMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	SendClientMessage(playerid, COLOR_WHITE, "-------------------------------------------------------------------------------------------------------------------------------");
 
@@ -858,7 +858,7 @@ CMD:reports(playerid, params[])
 CMD:createpoint(playerid, params[])
 {
 	if(PlayerData[playerid][pAdmin] < 1337)
-	    return SendErrorMessage(playerid, "Você não está autorizado a usar este comando.");
+	    return SendErrorMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	new name[80], point;
 
@@ -931,7 +931,7 @@ stock AddPointToFile(point, name[], Float:x, Float:y, Float:z, Float:a, outsideA
 CMD:points(playerid, params[])
 {
 	if(PlayerData[playerid][pAdmin] < 1337)
-	    return SendErrorMessage(playerid, "Você não está autorizado a usar este comando.");
+	    return SendErrorMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	SendClientMessage(playerid, COLOR_GREY, "Listing all points...");
 
@@ -945,7 +945,7 @@ CMD:points(playerid, params[])
 CMD:editpoint(playerid, params[])
 {
 	if(PlayerData[playerid][pAdmin] < 1337)
-	    return SendErrorMessage(playerid, "Você não está autorizado a usar este comando.");
+	    return SendErrorMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	new point;
 
@@ -994,7 +994,7 @@ CMD:particlegun(playerid, params[])
 CMD:creategraffiti(playerid, params[])
 {
     if(PlayerData[playerid][pAdmin] < 4)
-		return SendUnauthMessage(playerid, "Você não está autorizado a usar este comando.");
+		return SendUnauthMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	AddSprayLocation(playerid);
 	return true;
@@ -1003,7 +1003,7 @@ CMD:creategraffiti(playerid, params[])
 CMD:editgraffiti(playerid, params[])
 {
     if(PlayerData[playerid][pAdmin] < 4)
-		return SendUnauthMessage(playerid, "Você não está autorizado a usar este comando.");
+		return SendUnauthMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	new
         graffid
@@ -1034,7 +1034,7 @@ CMD:editgraffiti(playerid, params[])
 CMD:destroygraffiti(playerid, params[])
 {
     if(PlayerData[playerid][pAdmin] < 4)
-		return SendUnauthMessage(playerid, "Você não está autorizado a usar este comando.");
+		return SendUnauthMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	for(new ID = 0; ID < MAX_SPRAY_LOCATIONS; ++ID)
 	{
@@ -1056,7 +1056,7 @@ CMD:destroygraffiti(playerid, params[])
 CMD:makeadmin(playerid, params[])
 {
     if(PlayerData[playerid][pAdmin] != 1337/* && !IsPlayerAdmin(playerid)*/)
-        return SendUnauthMessage(playerid, "Você não está autorizado a usar este comando.");
+        return SendUnauthMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
     new
         userid,
@@ -1095,7 +1095,7 @@ CMD:makeadmin(playerid, params[])
 CMD:maketester(playerid, params[])
 {
     if(PlayerData[playerid][pAdmin] != 1337/* && !IsPlayerAdmin(playerid)*/)
-        return SendUnauthMessage(playerid, "Você não está autorizado a usar este comando.");
+        return SendUnauthMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
     new
     	userid
@@ -1135,7 +1135,7 @@ CMD:maketester(playerid, params[])
 CMD:updatemotd(playerid, params[])
 {
 	if(PlayerData[playerid][pAdmin] < 1337)
-		return SendUnauthMessage(playerid, "Você não está autorizado a usar este comando.");
+		return SendUnauthMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	Dialog_Show(playerid, MotdList, DIALOG_STYLE_LIST, "Update Motd", "Line 1\nLine 2\nLine 3\nLine 4\nLine 5", "Update", "Cancel");
 	return true;
@@ -1144,7 +1144,7 @@ CMD:updatemotd(playerid, params[])
 CMD:forceunmask(playerid, params[])
 {
  	if(PlayerData[playerid][pAdmin] < 3)
-    	return SendErrorMessage(playerid, "Você não está autorizado a usar este comando.");
+    	return SendErrorMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	new
 		userid = INVALID_PLAYER_ID
@@ -1195,7 +1195,7 @@ stock TrashVehicleRequest(id)
 CMD:vehiclerequests(playerid, params[])
 {
     if(PlayerData[playerid][pAdmin] < 3)
-		return SendUnauthMessage(playerid, "Você não está autorizado a usar este comando.");
+		return SendUnauthMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	new request;
 
@@ -1323,7 +1323,7 @@ stock DeleteVehicleNameRequest(id)
 CMD:watchradio(playerid, params[])
 {
 	if(PlayerData[playerid][pAdmin] < 2)
-		return SendErrorMessage(playerid, "Você não está autorizado a usar este comando.");
+		return SendErrorMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	new channel;
 
@@ -1351,7 +1351,7 @@ CMD:watchradio(playerid, params[])
 CMD:propinfo(playerid, params[])
 {
     if(PlayerData[playerid][pAdmin] < 1)
-    	return SendUnauthMessage(playerid, "Você não está autorizado a usar este comando.");
+    	return SendUnauthMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	new house;
 
@@ -1371,7 +1371,7 @@ CMD:propinfo(playerid, params[])
 CMD:desynced(playerid, params[])
 {
     if(PlayerData[playerid][pAdmin] < 1)
-    	return SendUnauthMessage(playerid, "Você não está autorizado a usar este comando.");
+    	return SendUnauthMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	new userid;
 
@@ -1394,7 +1394,7 @@ CMD:desynced(playerid, params[])
 CMD:whereami(playerid, params[])
 {
     if(PlayerData[playerid][pAdmin] < 1)
-    	return SendErrorMessage(playerid, "Você não está autorizado a usar este comando.");
+    	return SendErrorMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	new id = -1;
 
@@ -1425,7 +1425,7 @@ CMD:whereami(playerid, params[])
 CMD:neargraffiti(playerid, params[])
 {
     if(PlayerData[playerid][pAdmin] < 1)
-    	return SendErrorMessage(playerid, "Você não está autorizado a usar este comando.");
+    	return SendErrorMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	new id = -1;
 
@@ -1440,7 +1440,7 @@ CMD:neargraffiti(playerid, params[])
 CMD:createsignal(playerid, params[])
 {
     if(PlayerData[playerid][pAdmin] < 1337)
-    	return SendErrorMessage(playerid, "Você não está autorizado a usar este comando.");
+    	return SendErrorMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	if(isnull(params) || strlen(params) > 32)
 	    return SendSyntaxMessage(playerid, "/createsignal [name]");
@@ -1457,7 +1457,7 @@ CMD:createsignal(playerid, params[])
 CMD:editsignal(playerid, params[])
 {
 	if(PlayerData[playerid][pAdmin] < 1337)
-    	return SendErrorMessage(playerid, "Você não está autorizado a usar este comando.");
+    	return SendErrorMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	new id, type[24], string[128];
 
@@ -1518,7 +1518,7 @@ CMD:destroysignal(playerid, params[])
 	    id = 0;
 
     if(PlayerData[playerid][pAdmin] < 5)
-    	return SendErrorMessage(playerid, "Você não está autorizado a usar este comando.");
+    	return SendErrorMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	if(sscanf(params, "d", id))
 	    return SendSyntaxMessage(playerid, "/destroysignal [signal id]");
@@ -1534,7 +1534,7 @@ CMD:destroysignal(playerid, params[])
 CMD:xyz(playerid, params[])
 {
 	if(PlayerData[playerid][pAdmin] < 1337)
-		return SendUnauthMessage(playerid, "Você não está autorizado a usar este comando.");
+		return SendUnauthMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	new Float:x, Float:y, Float:z;
 
@@ -1552,7 +1552,7 @@ CMD:xyz(playerid, params[])
 CMD:goto(playerid, params[])
 {
 	if(PlayerData[playerid][pAdmin] < 1)
-		return SendUnauthMessage(playerid, "Você não está autorizado a usar este comando.");
+		return SendUnauthMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	new userid, Float:x, Float:y, Float:z;
 
@@ -1596,7 +1596,7 @@ CMD:goto(playerid, params[])
 CMD:icv(playerid, params[])
 {
     if(PlayerData[playerid][pAdmin] < 1337)
-    	return SendErrorMessage(playerid, "Você não está autorizado a usar este comando.");
+    	return SendErrorMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
     	
 	if(GetPlayerState(playerid) != PLAYER_STATE_ONFOOT)
 		return SendErrorMessage(playerid, "You need to be on foot.");
@@ -1637,7 +1637,7 @@ CMD:icv(playerid, params[])
 CMD:gotocar(playerid, params[])
 {
     if(PlayerData[playerid][pAdmin] < 1)
-    	return SendErrorMessage(playerid, "Você não está autorizado a usar este comando.");
+    	return SendErrorMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	new
 		vehicleid
@@ -1664,7 +1664,7 @@ CMD:gotocar(playerid, params[])
 CMD:getcar(playerid, params[])
 {
     if(PlayerData[playerid][pAdmin] < 1)
-    	return SendErrorMessage(playerid, "Você não está autorizado a usar este comando.");
+    	return SendErrorMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	new
 		vehicleid
@@ -1691,7 +1691,7 @@ CMD:getcar(playerid, params[])
 CMD:lastincar(playerid, params[])
 {
 	if(PlayerData[playerid][pAdmin] < 2)
-		return SendUnauthMessage(playerid, "Você não está autorizado a usar este comando.");
+		return SendUnauthMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	new
 		vehicleid
@@ -1745,7 +1745,7 @@ CMD:lastincar(playerid, params[])
 CMD:entercarseat(playerid, params[])
 {
 	if(PlayerData[playerid][pAdmin] < 2)
-		return SendUnauthMessage(playerid, "Você não está autorizado a usar este comando.");
+		return SendUnauthMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	new vehicleid, seat;
 
@@ -1770,7 +1770,7 @@ CMD:entercarseat(playerid, params[])
 CMD:explosion(playerid, params[])
 {
 	if(PlayerData[playerid][pAdmin] < 2)
-		return SendErrorMessage(playerid, "Você não está autorizado a usar este comando.");
+		return SendErrorMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	new userid, Float:slx, Float:sly, Float:slz;
 
@@ -1790,7 +1790,7 @@ CMD:explosion(playerid, params[])
 CMD:gotofs(playerid, params[])
 {
 	if(PlayerData[playerid][pAdmin] < 1)
-		return SendUnauthMessage(playerid, "Você não está autorizado a usar este comando.");
+		return SendUnauthMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	new faction, spawn;
 
@@ -1856,7 +1856,7 @@ CMD:gotofs(playerid, params[])
 CMD:p2p(playerid, params[])
 {
 	if(PlayerData[playerid][pAdmin] < 1)
-		return SendUnauthMessage(playerid, "Você não está autorizado a usar este comando.");
+		return SendUnauthMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	new userid, targetid;
 
@@ -1891,7 +1891,7 @@ stock SyncPlayerToPlayer(playerid, userid)
 CMD:p2v(playerid, params[])
 {
 	if(PlayerData[playerid][pAdmin] < 1)
-		return SendUnauthMessage(playerid, "Você não está autorizado a usar este comando.");
+		return SendUnauthMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	new userid, vehicleid;
 
@@ -1923,7 +1923,7 @@ CMD:p2v(playerid, params[])
 CMD:p2iw(playerid, params[])
 {
 	if(PlayerData[playerid][pAdmin] < 1)
-		return SendUnauthMessage(playerid, "Você não está autorizado a usar este comando.");
+		return SendUnauthMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	new userid, interior, world;
 
@@ -1943,7 +1943,7 @@ CMD:p2iw(playerid, params[])
 CMD:p2fs(playerid, params[])
 {
 	if(PlayerData[playerid][pAdmin] < 1)
-		return SendUnauthMessage(playerid, "Você não está autorizado a usar este comando.");
+		return SendUnauthMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	new userid, faction;
 
@@ -1990,7 +1990,7 @@ CMD:p2fs(playerid, params[])
 CMD:gethere(playerid, params[])
 {
 	if(PlayerData[playerid][pAdmin] < 1)
-		return SendUnauthMessage(playerid, "Você não está autorizado a usar este comando.");
+		return SendUnauthMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	new userid, Float:x, Float:y, Float:z;
 
@@ -2036,7 +2036,7 @@ CMD:gethere(playerid, params[])
 CMD:sf(playerid, params[])
 {
 	if(PlayerData[playerid][pAdmin] < 2)
-  		return SendErrorMessage(playerid, "Você não está autorizado a usar este comando.");
+  		return SendErrorMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	new
 	    userid
@@ -2058,7 +2058,7 @@ CMD:sf(playerid, params[])
 CMD:freeze(playerid, params[])
 {
 	if(PlayerData[playerid][pAdmin] < 1 && !IsTester(playerid))
-  		return SendErrorMessage(playerid, "Você não está autorizado a usar este comando.");
+  		return SendErrorMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	new userid;
 
@@ -2085,7 +2085,7 @@ YCMD:unfreeze(playerid, params[], help) = thaw;
 CMD:thaw(playerid, params[])
 {
 	if(PlayerData[playerid][pAdmin] < 1)
-  		return SendErrorMessage(playerid, "Você não está autorizado a usar este comando.");
+  		return SendErrorMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	new
 	    userid
@@ -2112,7 +2112,7 @@ CMD:thaw(playerid, params[])
 CMD:mute(playerid, params[])
 {
 	if(PlayerData[playerid][pAdmin] < 1)
-  		return SendErrorMessage(playerid, "Você não está autorizado a usar este comando.");
+  		return SendErrorMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	new
 		userid
@@ -2157,7 +2157,7 @@ CMD:mute(playerid, params[])
 CMD:playsound(playerid, params[])
 {
     if(PlayerData[playerid][pAdmin] < 4)
-		return SendErrorMessage(playerid, "Você não está autorizado a usar este comando.");
+		return SendErrorMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	new userid, soundid;
 
@@ -2174,7 +2174,7 @@ CMD:playsound(playerid, params[])
 CMD:slapcar(playerid, params[])
 {
 	if(PlayerData[playerid][pAdmin] < 1)
-		return SendErrorMessage(playerid, "Você não está autorizado a usar este comando.");
+		return SendErrorMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	new vehicleid, Float:slx, Float:sly, Float:slz;
 
@@ -2194,7 +2194,7 @@ CMD:slapcar(playerid, params[])
 CMD:slap(playerid, params[])
 {
 	if(PlayerData[playerid][pAdmin] < 1)
-		return SendErrorMessage(playerid, "Você não está autorizado a usar este comando.");
+		return SendErrorMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	new userid, Float:slx, Float:sly, Float:slz;
 
@@ -2223,7 +2223,7 @@ CMD:slap(playerid, params[])
 CMD:gotopizza(playerid, params[])
 {
 	if(PlayerData[playerid][pAdmin] < 1)
-		return SendErrorMessage(playerid, "Você não está autorizado a usar este comando.");
+		return SendErrorMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	SetPlayerDynamicPos(playerid, 2087.6670,-1806.5240,13.5469);
 	SetPlayerInterior(playerid, 0);
@@ -2237,7 +2237,7 @@ CMD:gotopizza(playerid, params[])
 CMD:gotospawn(playerid, params[])
 {
 	if(PlayerData[playerid][pAdmin] < 1)
-  		return SendErrorMessage(playerid, "Você não está autorizado a usar este comando.");
+  		return SendErrorMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	if(GetPlayerState(playerid) == 2)
 	{
@@ -2261,7 +2261,7 @@ CMD:gotospawn(playerid, params[])
 CMD:gotoprison(playerid, params[])
 {
 	if(PlayerData[playerid][pAdmin] < 1)
-  		return SendErrorMessage(playerid, "Você não está autorizado a usar este comando.");
+  		return SendErrorMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	SetPlayerPosEx(playerid, 1251.0468, 896.0416, 1161.0986);
 	SyncPrisonInterior(playerid, true);
@@ -2271,7 +2271,7 @@ CMD:gotoprison(playerid, params[])
 CMD:gotols(playerid, params[])
 {
 	if(PlayerData[playerid][pAdmin] < 1)
-  		return SendErrorMessage(playerid, "Você não está autorizado a usar este comando.");
+  		return SendErrorMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	if(GetPlayerState(playerid) == 2)
 	{
@@ -2295,7 +2295,7 @@ CMD:gotols(playerid, params[])
 CMD:gotosf(playerid, params[])
 {
     if(PlayerData[playerid][pAdmin] < 1)
-  		return SendErrorMessage(playerid, "Você não está autorizado a usar este comando.");
+  		return SendErrorMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
     if(GetPlayerState(playerid) == 2)
 	{
@@ -2319,7 +2319,7 @@ CMD:gotosf(playerid, params[])
 CMD:gotolv(playerid, params[])
 {
     if(PlayerData[playerid][pAdmin] < 1)
-  		return SendErrorMessage(playerid, "Você não está autorizado a usar este comando.");
+  		return SendErrorMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
     if(GetPlayerState(playerid) == 2)
 	{
@@ -2345,7 +2345,7 @@ CMD:gopos(playerid, params[])
     new Float:Pos[3], int;
 
 	if(PlayerData[playerid][pAdmin] < 4)
-		return SendErrorMessage(playerid, "Você não está autorizado a usar este comando.");
+		return SendErrorMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	if(sscanf(params, "fffi", Pos[0], Pos[1], Pos[2], int))
 		return SendSyntaxMessage(playerid, "/gopos [x] [y] [z] [int]");
@@ -2363,7 +2363,7 @@ CMD:gocp(playerid, params[])
 		return 1;
 
 	if(PlayerData[playerid][pAdmin] < 4)
-		return SendErrorMessage(playerid, "Você não está autorizado a usar este comando.");
+		return SendErrorMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	SetPlayerPosEx(playerid, gPlayerCheckpointX[playerid], gPlayerCheckpointY[playerid], gPlayerCheckpointZ[playerid]);
 	SetPlayerInterior(playerid, 0);
@@ -2379,7 +2379,7 @@ CMD:gorcp(playerid, params[])
 		return true;
 
 	if(PlayerData[playerid][pAdmin] < 4)
-		return SendErrorMessage(playerid, "Você não está autorizado a usar este comando.");
+		return SendErrorMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	SetPlayerPosEx(playerid, PlayerData[playerid][pCP_X], PlayerData[playerid][pCP_Y], PlayerData[playerid][pCP_Z]);
 	SetPlayerInterior(playerid, 0);
@@ -2392,7 +2392,7 @@ CMD:gorcp(playerid, params[])
 CMD:backup(playerid, params[])
 {
 	if(PlayerData[playerid][pAdmin] < 1)
-    	return SendErrorMessage(playerid, "Você não está autorizado a usar este comando.");
+    	return SendErrorMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	foreach (new i : Player) SQL_SaveCharacter(i, false);
 	foreach (new i : Property) Property_Save(i);
@@ -2409,7 +2409,7 @@ YCMD:cac(playerid, params[], help) = clearallchat;
 CMD:clearallchat(playerid, params[])
 {
 	if(PlayerData[playerid][pAdmin] < 1)
-    	return SendErrorMessage(playerid, "Você não está autorizado a usar este comando.");
+    	return SendErrorMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	for(new i = 0; i < 50; ++i)
 	{
@@ -2424,7 +2424,7 @@ CMD:clearguns(playerid, params[])
 	    userid;
 
     if(PlayerData[playerid][pAdmin] < 1)
-    	return SendErrorMessage(playerid, "Você não está autorizado a usar este comando.");
+    	return SendErrorMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	if(sscanf(params, "u", userid))
 	    return SendSyntaxMessage(playerid, "/clearguns [playerid/PartOfName]");
@@ -2441,7 +2441,7 @@ CMD:clearguns(playerid, params[])
 CMD:checkafk(playerid, params[])
 {
 	if(PlayerData[playerid][pAdmin] < 1)
-    	return SendErrorMessage(playerid, "Você não está autorizado a usar este comando.");
+    	return SendErrorMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	SendClientMessage(playerid, COLOR_LIGHTRED, "Listing all AFK players...");
 
@@ -2459,7 +2459,7 @@ CMD:checkafk(playerid, params[])
 CMD:masked(playerid, params[])
 {
 	if(PlayerData[playerid][pAdmin] < 1)
-    	return SendErrorMessage(playerid, "Você não está autorizado a usar este comando.");
+    	return SendErrorMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	SendClientMessage(playerid, COLOR_LIGHTRED, "Listing all masked players...");
 
@@ -2477,7 +2477,7 @@ CMD:masked(playerid, params[])
 CMD:ismasked(playerid, params[])
 {
 	if(PlayerData[playerid][pAdmin] < 1)
-    	return SendErrorMessage(playerid, "Você não está autorizado a usar este comando.");
+    	return SendErrorMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	new
 		userid
@@ -2508,7 +2508,7 @@ CMD:ismasked(playerid, params[])
 CMD:biztypes(playerid, params[])
 {
 	if(PlayerData[playerid][pAdmin] < 4)
-    	return SendErrorMessage(playerid, "Você não está autorizado a usar este comando.");
+    	return SendErrorMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	SendClientMessage(playerid, COLOR_GRAD2, "1: Gas Station | 2: Ammunation | 3: 24/7 4: Vehicle Dealership | 5: Car Modding Shop | 6: Pay & Spray | 7: Clothing Shop");
 	SendClientMessage(playerid, COLOR_GRAD2, "8: Bars | 9: Restaurant | 10: Furniture Shop | 11: Advertisement Center | 12: Bank | 13: Weapon Factory");
@@ -2518,7 +2518,7 @@ CMD:biztypes(playerid, params[])
 CMD:showbusinesses(playerid, params[])
 {
 	if(PlayerData[playerid][pAdmin] < 4)
-    	return SendErrorMessage(playerid, "Você não está autorizado a usar este comando.");
+    	return SendErrorMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	gstr[0] = EOS;
 
@@ -2537,7 +2537,7 @@ CMD:showbusinesses(playerid, params[])
 CMD:whatbusiness(playerid, params[])
 {
 	if(PlayerData[playerid][pAdmin] < 4)
-    	return SendErrorMessage(playerid, "Você não está autorizado a usar este comando.");
+    	return SendErrorMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
     new str[128];
 
@@ -2556,7 +2556,7 @@ CMD:whatbusiness(playerid, params[])
 CMD:makebusiness(playerid, params[])
 {
 	if(PlayerData[playerid][pAdmin] < 4)
-    	return SendErrorMessage(playerid, "Você não está autorizado a usar este comando.");
+    	return SendErrorMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	new bizid = Iter_Free(Business), level, price, type, Float:x, Float:y, Float:z;
 
@@ -2684,7 +2684,7 @@ CMD:removebusiness(playerid, params[])
 	new bizid, msg[128];
 
 	if(PlayerData[playerid][pAdmin] < 4)
-  		return SendErrorMessage(playerid, "Você não está autorizado a usar este comando.");
+  		return SendErrorMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
     if((bizid = Business_Nearest(playerid)) != -1)
 	{
@@ -2732,7 +2732,7 @@ CMD:asellbusiness(playerid, params[])
 	new bizid, msg[128];
 
 	if(PlayerData[playerid][pAdmin] < 4)
-  		return SendErrorMessage(playerid, "Você não está autorizado a usar este comando.");
+  		return SendErrorMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	if(sscanf(params, "d", bizid))
 		return SendSyntaxMessage(playerid, "/asellbusiness [bizid]");
@@ -2780,7 +2780,7 @@ CMD:asellbusiness(playerid, params[])
 CMD:businessenter(playerid, params[])
 {
 	if(PlayerData[playerid][pAdmin] < 4)
-		return SendErrorMessage(playerid, "Você não está autorizado a usar este comando.");
+		return SendErrorMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	new bizid;
 
@@ -2811,7 +2811,7 @@ CMD:businessenter(playerid, params[])
 CMD:businessex1(playerid, params[])
 {
 	if(PlayerData[playerid][pAdmin] < 4)
-		return SendErrorMessage(playerid, "Você não está autorizado a usar este comando.");
+		return SendErrorMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	new bizid, status;
 
@@ -2855,7 +2855,7 @@ CMD:businessex1(playerid, params[])
 CMD:businessex2(playerid, params[])
 {
 	if(PlayerData[playerid][pAdmin] < 4)
-		return SendErrorMessage(playerid, "Você não está autorizado a usar este comando.");
+		return SendErrorMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	new bizid, status;
 
@@ -2899,7 +2899,7 @@ CMD:businessex2(playerid, params[])
 CMD:businessex3(playerid, params[])
 {
 	if(PlayerData[playerid][pAdmin] < 4)
-		return SendErrorMessage(playerid, "Você não está autorizado a usar este comando.");
+		return SendErrorMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	new bizid, status;
 
@@ -2943,7 +2943,7 @@ CMD:businessex3(playerid, params[])
 CMD:businessexit(playerid, params[])
 {
 	if(PlayerData[playerid][pAdmin] < 4)
-		return SendErrorMessage(playerid, "Você não está autorizado a usar este comando.");
+		return SendErrorMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	new bizid;
 
@@ -2976,7 +2976,7 @@ CMD:bizz(playerid, params[])
 	;
 
 	if(PlayerData[playerid][pAdmin] < 4)
-  		return SendErrorMessage(playerid, "Você não está autorizado a usar este comando.");
+  		return SendErrorMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
     if(sscanf(params, "d", bizid))
 		return SendSyntaxMessage(playerid, "/businessenter [bizid]");
@@ -2991,7 +2991,7 @@ CMD:bizz(playerid, params[])
 CMD:editbusiness(playerid, params[])
 {
 	if(PlayerData[playerid][pAdmin] < 4)
-		return SendErrorMessage(playerid, "Você não está autorizado a usar este comando.");
+		return SendErrorMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	new text[256], type, bizid;
 
@@ -3104,7 +3104,7 @@ CMD:editbusiness(playerid, params[])
 CMD:businessint(playerid, params[])
 {
 	if(PlayerData[playerid][pAdmin] < 4)
-		return SendErrorMessage(playerid, "Você não está autorizado a usar este comando.");
+		return SendErrorMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	new interior, business;
 
@@ -3152,7 +3152,7 @@ stock EditApartmentInterior(playerid, houseid)
 CMD:setapt(playerid, params[])
 {
 	if(PlayerData[playerid][pAdmin] < 4)
-    	return SendErrorMessage(playerid, "Você não está autorizado a usar este comando.");
+    	return SendErrorMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	new houseid, type, text[128];
 
@@ -3264,7 +3264,7 @@ YCMD:createapartment(playerid, params[], help) = createapt;
 CMD:createapt(playerid, params[])
 {
 	if(PlayerData[playerid][pAdmin] < 1337)
-    	return SendErrorMessage(playerid, "Você não está autorizado a usar este comando.");
+    	return SendErrorMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	new houseid, houseinfo[60], pickup, faction, Float:x, Float:y, Float:z;
 
@@ -3329,7 +3329,7 @@ YCMD:removeapartment(playerid, params[], help) = removeapt;
 CMD:removeapt(playerid, params[])
 {
 	if(PlayerData[playerid][pAdmin] < 1337)
-    	return SendErrorMessage(playerid, "Você não está autorizado a usar este comando.");
+    	return SendErrorMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	new houseid;
 
@@ -3398,7 +3398,7 @@ Dialog:ApartmentInterior(playerid, response, listitem, inputtext[])
 CMD:createprop(playerid, params[])
 {
 	if(PlayerData[playerid][pAdmin] < 4)
-    	return SendErrorMessage(playerid, "Você não está autorizado a usar este comando.");
+    	return SendErrorMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	new type, value;
 
@@ -3479,7 +3479,7 @@ CMD:createprop(playerid, params[])
 CMD:removeprop(playerid, params[])
 {
 	if(PlayerData[playerid][pAdmin] < 1337)
-    	return SendErrorMessage(playerid, "Você não está autorizado a usar este comando.");
+    	return SendErrorMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	new houseid = -1;
 
@@ -3501,7 +3501,7 @@ CMD:removeprop(playerid, params[])
 CMD:asellhouse(playerid, params[])
 {
 	if(PlayerData[playerid][pAdmin] < 1337)
-    	return SendErrorMessage(playerid, "Você não está autorizado a usar este comando.");
+    	return SendErrorMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	new
 	    houseid
@@ -3538,7 +3538,7 @@ CMD:asellhouse(playerid, params[])
 CMD:houseenter(playerid, params[])
 {
 	if(PlayerData[playerid][pAdmin] < 4)
-    	return SendErrorMessage(playerid, "Você não está autorizado a usar este comando.");
+    	return SendErrorMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	new houseid, Float:px, Float:py, Float:pz;
 
@@ -3560,7 +3560,7 @@ CMD:houseenter(playerid, params[])
 CMD:houseexit(playerid, params[])
 {
 	if(PlayerData[playerid][pAdmin] < 4)
-    	return SendErrorMessage(playerid, "Você não está autorizado a usar este comando.");
+    	return SendErrorMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	new houseid,  Float:px, Float:py, Float:pz;
 
@@ -3582,7 +3582,7 @@ CMD:houseexit(playerid, params[])
 CMD:setprop(playerid, params[])
 {
 	if(PlayerData[playerid][pAdmin] < 4)
-    	return SendErrorMessage(playerid, "Você não está autorizado a usar este comando.");
+    	return SendErrorMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	new houseid, type, text[128];
 
@@ -3662,7 +3662,7 @@ CMD:setprop(playerid, params[])
 CMD:gotograffiti(playerid, params[])
 {
 	if(PlayerData[playerid][pAdmin] < 4)
-    	return SendErrorMessage(playerid, "Você não está autorizado a usar este comando.");
+    	return SendErrorMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	new sprayid;
 
@@ -3683,7 +3683,7 @@ CMD:gotograffiti(playerid, params[])
 CMD:cleangraffiti(playerid, params[])
 {
 	if(PlayerData[playerid][pAdmin] < 4)
-    	return SendErrorMessage(playerid, "Você não está autorizado a usar este comando.");
+    	return SendErrorMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	new sprayid;
 
@@ -3706,7 +3706,7 @@ YCMD:gotoapt(playerid, params[], help) = gotoapp;
 CMD:gotoapp(playerid, params[])
 {
 	if(PlayerData[playerid][pAdmin] < 4)
-    	return SendErrorMessage(playerid, "Você não está autorizado a usar este comando.");
+    	return SendErrorMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	new houseid;
 
@@ -3727,7 +3727,7 @@ CMD:gotoapp(playerid, params[])
 CMD:house(playerid, params[])
 {
 	if(PlayerData[playerid][pAdmin] < 1)
-    	return SendErrorMessage(playerid, "Você não está autorizado a usar este comando.");
+    	return SendErrorMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	new
 		houseid
@@ -3767,7 +3767,7 @@ CMD:house(playerid, params[])
 CMD:properties(playerid, params[])
 {
     if(PlayerData[playerid][pAdmin] < 1337)
-    	return SendErrorMessage(playerid, "Você não está autorizado a usar este comando.");
+    	return SendErrorMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	ShowPropertyDialogue(playerid, 0);
 	return true;
@@ -3836,7 +3836,7 @@ YCMD:teles(playerid, params[], help) = tp;
 CMD:tp(playerid, params[])
 {
     if(PlayerData[playerid][pAdmin] < 3)
-    	return SendErrorMessage(playerid, "Você não está autorizado a usar este comando.");
+    	return SendErrorMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	if(!AdminDuty{playerid})	
 		return SendUnauthMessage(playerid, "You must be on admin duty to perform this command.");			
@@ -3896,7 +3896,7 @@ CMD:tp(playerid, params[])
 CMD:maketele(playerid, params[])
 {
     if(PlayerData[playerid][pAdmin] < 3)
-    	return SendErrorMessage(playerid, "Você não está autorizado a usar este comando.");
+    	return SendErrorMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	new name[32], interior, teleid = -1, Float:X, Float:Y, Float:Z;
 
@@ -3937,7 +3937,7 @@ CMD:maketele(playerid, params[])
 CMD:removetele(playerid, params[])
 {
     if(PlayerData[playerid][pAdmin] < 3)
-    	return SendErrorMessage(playerid, "Você não está autorizado a usar este comando.");
+    	return SendErrorMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
     new teleid;
 
@@ -3957,7 +3957,7 @@ CMD:removetele(playerid, params[])
 CMD:fixveh(playerid, params[])
 {
 	if(PlayerData[playerid][pAdmin] < 4)
-    	return SendErrorMessage(playerid, "Você não está autorizado a usar este comando.");
+    	return SendErrorMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	new
 		vehicleid,
@@ -3989,7 +3989,7 @@ CMD:fixveh(playerid, params[])
 CMD:healcar(playerid, params[])
 {
 	if(PlayerData[playerid][pAdmin] < 4)
-    	return SendErrorMessage(playerid, "Você não está autorizado a usar este comando.");
+    	return SendErrorMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	if(!IsPlayerInAnyVehicle(playerid))
 		return SendErrorMessage(playerid, "You must be in a vehicle.");
@@ -4018,7 +4018,7 @@ CMD:healcar(playerid, params[])
 CMD:descar(playerid, params[])
 {
 	if(PlayerData[playerid][pAdmin] < 1337)
-    	return SendErrorMessage(playerid, "Você não está autorizado a usar este comando.");
+    	return SendErrorMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	if(!IsPlayerInAnyVehicle(playerid))
 		return SendErrorMessage(playerid, "You must be in a vehicle.");
@@ -4091,7 +4091,7 @@ CMD:revive(playerid, params[])
 CMD:sethealth(playerid, params[])
 {
 	if(PlayerData[playerid][pAdmin] < 1)
-    	return SendErrorMessage(playerid, "Você não está autorizado a usar este comando.");
+    	return SendErrorMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	new userid, Float:health;
 
@@ -4116,7 +4116,7 @@ CMD:sethealth(playerid, params[])
 CMD:gethealth(playerid, params[])
 {
 	if(PlayerData[playerid][pAdmin] < 1)
- 		return SendErrorMessage(playerid, "Você não está autorizado a usar este comando.");
+ 		return SendErrorMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	new
 		Float:health
@@ -4137,7 +4137,7 @@ CMD:gethealth(playerid, params[])
 CMD:tod(playerid, params[])
 {
 	if(PlayerData[playerid][pAdmin] < 2)
-		return SendErrorMessage(playerid, "Você não está autorizado a usar este comando.");
+		return SendErrorMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	new
 	    time
@@ -4155,7 +4155,7 @@ CMD:tod(playerid, params[])
 CMD:weather(playerid, params[])
 {
 	if(PlayerData[playerid][pAdmin] < 3)
-		return SendErrorMessage(playerid, "Você não está autorizado a usar este comando.");
+		return SendErrorMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
     new
 		weather
@@ -4178,7 +4178,7 @@ CMD:weatherall(playerid, params[])
 	new weather;
 
 	if(PlayerData[playerid][pAdmin] < 3)
-		return SendErrorMessage(playerid, "Você não está autorizado a usar este comando.");
+		return SendErrorMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	if(sscanf(params, "d", weather))
 		return SendSyntaxMessage(playerid, "/weather [weatherid]");
@@ -4246,7 +4246,7 @@ CMD:givegun(playerid, params[])
 CMD:givemoney(playerid, params[])
 {
 	if(PlayerData[playerid][pAdmin] < 3)
-    	return SendErrorMessage(playerid, "Você não está autorizado a usar este comando.");
+    	return SendErrorMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	new userid, amount;
 
@@ -4271,7 +4271,7 @@ CMD:givemoney(playerid, params[])
 CMD:takemoney(playerid, params[])
 {
 	if(PlayerData[playerid][pAdmin] < 3)
-    	return SendErrorMessage(playerid, "Você não está autorizado a usar este comando.");
+    	return SendErrorMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	new userid, amount;
 
@@ -4296,7 +4296,7 @@ CMD:takemoney(playerid, params[])
 CMD:setarmour(playerid, params[])
 {
 	if(PlayerData[playerid][pAdmin] < 1)
-    	return SendErrorMessage(playerid, "Você não está autorizado a usar este comando.");
+    	return SendErrorMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	new userid, Float:health;
 
@@ -4321,7 +4321,7 @@ CMD:setarmour(playerid, params[])
 CMD:setskin(playerid, params[])
 {
 	if(PlayerData[playerid][pAdmin] < 1)
-    	return SendErrorMessage(playerid, "Você não está autorizado a usar este comando.");
+    	return SendErrorMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	new userid, skin;
 
@@ -4343,7 +4343,7 @@ CMD:setskin(playerid, params[])
 /*CMD:togdiscord(playerid, params[])
 {
 	if(PlayerData[playerid][pAdmin] < 1337)
-    	return SendErrorMessage(playerid, "Você não está autorizado a usar este comando.");
+    	return SendErrorMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
     if(systemVariables[DiscordStatus] == 1)
     {
@@ -4363,7 +4363,7 @@ CMD:setskin(playerid, params[])
 CMD:createaccount(playerid, params[])
 {
 	if(PlayerData[playerid][pAdmin] < 1337)
-    	return SendErrorMessage(playerid, "Você não está autorizado a usar este comando.");
+    	return SendErrorMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
     new username[MAX_PLAYER_NAME], password[64], quiz;
 
@@ -4393,7 +4393,7 @@ CMD:createaccount(playerid, params[])
 CMD:createcharacter(playerid, params[])
 {
 	if(PlayerData[playerid][pAdmin] < 1337)
-    	return SendErrorMessage(playerid, "Você não está autorizado a usar este comando.");
+    	return SendErrorMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
     new username[MAX_PLAYER_NAME], character[MAX_PLAYER_NAME], tutorial;
 
@@ -4446,7 +4446,7 @@ FUNX::OnAccountCreated(playerid, const username[])
 CMD:checkaccount(playerid, params[])
 {
 	if(PlayerData[playerid][pAdmin] < 1337)
-    	return SendErrorMessage(playerid, "Você não está autorizado a usar este comando.");
+    	return SendErrorMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
     new username[MAX_PLAYER_NAME];
 
@@ -4507,7 +4507,7 @@ stock IsValidAccount(master[])
 CMD:changename(playerid, params[])
 {
 	if(PlayerData[playerid][pAdmin] < 2)
-    	return SendErrorMessage(playerid, "Você não está autorizado a usar este comando.");
+    	return SendErrorMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	new userid, newName[MAX_PLAYER_NAME];
 
@@ -4562,7 +4562,7 @@ stock IsValidRoleplayName(const name[])
 CMD:setstat(playerid, params[])
 {
     if(PlayerData[playerid][pAdmin] < 3)
-    	return SendErrorMessage(playerid, "Você não está autorizado a usar este comando.");
+    	return SendErrorMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	new pid, statcode, amount;
 
@@ -4823,7 +4823,7 @@ CMD:setstat(playerid, params[])
 CMD:gotocmdspot(playerid, params[])
 {
     if(PlayerData[playerid][pAdmin] < 2)
-    	return SendErrorMessage(playerid, "Você não está autorizado a usar este comando.");
+    	return SendErrorMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	new house = InProperty[playerid];
 
@@ -4837,7 +4837,7 @@ CMD:gotocmdspot(playerid, params[])
 CMD:hints(playerid, params[])
 {
     if(PlayerData[playerid][pAdmin] < 1337)
-		return SendUnauthMessage(playerid, "Você não está autorizado a usar este comando.");
+		return SendUnauthMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	gstr[0] = EOS;
 
@@ -4863,7 +4863,7 @@ CMD:variables(playerid, params[])
 CMD:asetrank(playerid, params[])
 {
     if(PlayerData[playerid][pAdmin] < 4)
-    	return SendErrorMessage(playerid, "Você não está autorizado a usar este comando.");
+    	return SendErrorMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	new
 		userid,
@@ -4895,7 +4895,7 @@ CMD:asetrank(playerid, params[])
 CMD:makeleader(playerid, params[])
 {
     if(PlayerData[playerid][pAdmin] < 4)
-		return SendErrorMessage(playerid, "Você não está autorizado a usar este comando.");
+		return SendErrorMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	new
 		userid,
@@ -4966,7 +4966,7 @@ CMD:makeleader(playerid, params[])
 CMD:viewfactions(playerid, params[])
 {
 	if(PlayerData[playerid][pAdmin] < 4)
-	    return SendUnauthMessage(playerid, "Você não está autorizado a usar este comando.");
+	    return SendUnauthMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	ViewFactions(playerid);
 	return true;
@@ -4977,7 +4977,7 @@ CMD:createfaction(playerid, params[])
 	new faction = -1, type, name[32];
 
     if(PlayerData[playerid][pAdmin] < 4)
-	    return SendUnauthMessage(playerid, "Você não está autorizado a usar este comando.");
+	    return SendUnauthMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	if(sscanf(params, "ds[32]", type, name))
 	{
@@ -5004,7 +5004,7 @@ CMD:destroyfaction(playerid, params[])
 	    id = 0;
 
     if(PlayerData[playerid][pAdmin] < 4)
-	    return SendUnauthMessage(playerid, "Você não está autorizado a usar este comando.");
+	    return SendUnauthMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	if(sscanf(params, "d", id))
 	    return SendSyntaxMessage(playerid, "/destroyfaction [faction id]");
@@ -5023,7 +5023,7 @@ CMD:destroyfaction(playerid, params[])
 CMD:setfaction(playerid, params[])
 {
 	if(PlayerData[playerid][pAdmin] < 4)
-	    return SendUnauthMessage(playerid, "Você não está autorizado a usar este comando.");
+	    return SendUnauthMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	new
 	    id,
@@ -5089,7 +5089,7 @@ CMD:setfaction(playerid, params[])
 CMD:makegate(playerid, params[])
 {
 	if(PlayerData[playerid][pAdmin] < 1337)
-    	return SendErrorMessage(playerid, "Você não está autorizado a usar este comando.");
+    	return SendErrorMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	new objectid, modelid, faction, name[64], Float:X, Float:Y, Float:Z;
 
@@ -5132,7 +5132,7 @@ CMD:makegate(playerid, params[])
 CMD:dupgate(playerid, params[])
 {
 	if(PlayerData[playerid][pAdmin] < 1337)
-    	return SendErrorMessage(playerid, "Você não está autorizado a usar este comando.");
+    	return SendErrorMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	new objectid, gateid, name[64];
 
@@ -5173,7 +5173,7 @@ CMD:dupgate(playerid, params[])
 CMD:removegate(playerid, params[])
 {
 	if(PlayerData[playerid][pAdmin] < 1337)
-    	return SendErrorMessage(playerid, "Você não está autorizado a usar este comando.");
+    	return SendErrorMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	new objectid;
 
@@ -5195,7 +5195,7 @@ CMD:removegate(playerid, params[])
 CMD:editgate(playerid, params[])
 {
 	if(PlayerData[playerid][pAdmin] < 1337)
-    	return SendErrorMessage(playerid, "Você não está autorizado a usar este comando.");
+    	return SendErrorMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	new objectid, type, input[64];
 
@@ -5277,7 +5277,7 @@ CMD:editgate(playerid, params[])
 CMD:whatgate(playerid, params[])
 {
 	if(PlayerData[playerid][pAdmin] < 1337)
-    	return SendErrorMessage(playerid, "Você não está autorizado a usar este comando.");
+    	return SendErrorMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	new Float:fDistance[2] = {99999.0, 0.0}, i = -1;
 
@@ -5304,7 +5304,7 @@ CMD:whatgate(playerid, params[])
 CMD:showgates(playerid, params[])
 {
 	if(PlayerData[playerid][pAdmin] < 1337)
-    	return SendErrorMessage(playerid, "Você não está autorizado a usar este comando.");
+    	return SendErrorMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	gstr[0] = EOS;
 
@@ -5322,7 +5322,7 @@ CMD:showgates(playerid, params[])
 CMD:showmovedoors(playerid, params[])
 {
 	if(PlayerData[playerid][pAdmin] < 1337)
-    	return SendErrorMessage(playerid, "Você não está autorizado a usar este comando.");
+    	return SendErrorMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	gstr[0] = EOS;
 
@@ -5364,7 +5364,7 @@ Dialog:ShowMovedoors(playerid, response, listitem, inputtext[])
 CMD:makemovedoor(playerid, params[])
 {
 	if(PlayerData[playerid][pAdmin] < 1337)
-    	return SendErrorMessage(playerid, "Você não está autorizado a usar este comando.");
+    	return SendErrorMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	new objectid, modelid, faction, name[64], Float:X, Float:Y, Float:Z;
 
@@ -5407,7 +5407,7 @@ CMD:makemovedoor(playerid, params[])
 CMD:dupmovedoor(playerid, params[])
 {
 	if(PlayerData[playerid][pAdmin] < 1337)
-    	return SendErrorMessage(playerid, "Você não está autorizado a usar este comando.");
+    	return SendErrorMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	new objectid, doorid, name[64];
 
@@ -5448,7 +5448,7 @@ CMD:dupmovedoor(playerid, params[])
 CMD:removemovedoor(playerid, params[])
 {
 	if(PlayerData[playerid][pAdmin] < 1337)
-    	return SendErrorMessage(playerid, "Você não está autorizado a usar este comando.");
+    	return SendErrorMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	new objectid;
 
@@ -5470,7 +5470,7 @@ CMD:removemovedoor(playerid, params[])
 CMD:cancelmovedoor(playerid, params[])
 {
 	if(PlayerData[playerid][pAdmin] < 1337)
-    	return SendErrorMessage(playerid, "Você não está autorizado a usar este comando.");
+    	return SendErrorMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	CancelEdit(playerid);
 
@@ -5482,7 +5482,7 @@ CMD:cancelmovedoor(playerid, params[])
 CMD:editmovedoor(playerid, params[])
 {
 	if(PlayerData[playerid][pAdmin] < 1337)
-    	return SendErrorMessage(playerid, "Você não está autorizado a usar este comando.");
+    	return SendErrorMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	new objectid, type, input[64];
 
@@ -5572,7 +5572,7 @@ CMD:editmovedoor(playerid, params[])
 CMD:whatmovedoor(playerid, params[])
 {
 	if(PlayerData[playerid][pAdmin] < 1337)
-    	return SendErrorMessage(playerid, "Você não está autorizado a usar este comando.");
+    	return SendErrorMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	new Float:fDistance[2] = {99999.0, 0.0}, i = -1 ;
 
@@ -5599,7 +5599,7 @@ CMD:whatmovedoor(playerid, params[])
 CMD:gotojet(playerid, params[])
 {
 	if(PlayerData[playerid][pAdmin] < 3)
-		return SendErrorMessage(playerid, "Você não está autorizado a usar este comando.");
+		return SendErrorMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
     SetPlayerDynamicPos(playerid, 1.5491, 23.3183, 1199.5938);
 	SetPlayerInterior(playerid, 1);
@@ -5614,7 +5614,7 @@ CMD:gotojet(playerid, params[])
 CMD:gotoin(playerid, params[])
 {
 	if(PlayerData[playerid][pAdmin] < 3)
-		return SendErrorMessage(playerid, "Você não está autorizado a usar este comando.");
+		return SendErrorMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
     SetPlayerDynamicPos(playerid, 1412.639892, -1.787510, 1000.924377);
 	SetPlayerInterior(playerid, 1);
@@ -5629,7 +5629,7 @@ CMD:gotoin(playerid, params[])
 CMD:gotostad(playerid, params[])
 {
 	if(PlayerData[playerid][pAdmin] < 3)
-		return SendErrorMessage(playerid, "Você não está autorizado a usar este comando.");
+		return SendErrorMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
     SetPlayerDynamicPos(playerid, -1395.958, -208.197, 1051.170);
 	SetPlayerInterior(playerid, 0);
@@ -5644,7 +5644,7 @@ CMD:gotostad(playerid, params[])
 CMD:sslap(playerid, params[])
 {
 	if(PlayerData[playerid][pAdmin] < 3)
-		return SendErrorMessage(playerid, "Você não está autorizado a usar este comando.");
+		return SendErrorMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	new targetid, Float:slx, Float:sly, Float:slz;
 
@@ -5670,7 +5670,7 @@ CMD:sslap(playerid, params[])
 CMD:smack(playerid, params[])
 {
 	if(PlayerData[playerid][pAdmin] < 3)
-		return SendErrorMessage(playerid, "Você não está autorizado a usar este comando.");
+		return SendErrorMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	new targetid, Float:slx, Float:sly, Float:slz;
 
@@ -5694,7 +5694,7 @@ CMD:smack(playerid, params[])
 CMD:enabletp(playerid, params[])
 {
 	if(PlayerData[playerid][pAdmin] < 3)
-		return SendErrorMessage(playerid, "Você não está autorizado a usar este comando.");
+		return SendErrorMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	new userid;
 
@@ -5719,7 +5719,7 @@ CMD:enabletp(playerid, params[])
 CMD:disabletp(playerid, params[])
 {
 	if(PlayerData[playerid][pAdmin] < 3)
-		return SendErrorMessage(playerid, "Você não está autorizado a usar este comando.");
+		return SendErrorMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	new userid;
 
@@ -5744,7 +5744,7 @@ CMD:disabletp(playerid, params[])
 CMD:kickfromjob(playerid, params[])
 {
 	if(PlayerData[playerid][pAdmin] < 3)
-		return SendErrorMessage(playerid, "Você não está autorizado a usar este comando.");
+		return SendErrorMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	new userid;
 
@@ -5769,7 +5769,7 @@ CMD:kickfromjob(playerid, params[])
 CMD:givepack(playerid, params[])
 {
 	if(PlayerData[playerid][pAdmin] < 4)
-		return SendErrorMessage(playerid, "Você não está autorizado a usar este comando.");
+		return SendErrorMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	new userid;
 
@@ -5797,7 +5797,7 @@ YCMD:ladmin(playerid, params[], help) = leadadmin;
 CMD:leadadmin(playerid, params[])
 {
 	if(PlayerData[playerid][pAdmin] < 4)
-		return SendErrorMessage(playerid, "Você não está autorizado a usar este comando.");
+		return SendErrorMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	if(isnull(params))
 		return SendClientMessage(playerid, COLOR_LIGHTRED, "USAGE: (/la)dmin [lead admin chat]");
@@ -5841,7 +5841,7 @@ YCMD:a(playerid, params[], help) = admin;
 CMD:admin(playerid, params[])
 {
 	if(PlayerData[playerid][pAdmin] < 1)
-		return SendErrorMessage(playerid, "Você não está autorizado a usar este comando.");
+		return SendErrorMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	if(isnull(params))
 		return SendClientMessage(playerid, COLOR_LIGHTRED, "USAGE: (/a)dmin [admin chat]");
@@ -5934,7 +5934,7 @@ YCMD:announce(playerid, params[], help) = aooc;
 CMD:aooc(playerid, params[])
 {
 	if(PlayerData[playerid][pAdmin] < 1)
-    	return SendErrorMessage(playerid, "Você não está autorizado a usar este comando.");
+    	return SendErrorMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	if(isnull(params))
 	    return SendSyntaxMessage(playerid, "/(a)ooc [message]");
@@ -5957,7 +5957,7 @@ CMD:aooc(playerid, params[])
 CMD:setplate(playerid, params[])
 {
 	if(PlayerData[playerid][pAdmin] < 4)
-		return SendUnauthMessage(playerid, "Você não está autorizado a usar este comando.");
+		return SendUnauthMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
     if(!IsPlayerInAnyVehicle(playerid))
 		return SendClientMessage(playerid, COLOR_GRAD2, "You must be in a vehicle to use this.");
@@ -5974,7 +5974,7 @@ CMD:setplate(playerid, params[])
 CMD:pmears(playerid, params[])
 {
 	if(PlayerData[playerid][pAdmin] < 4)
-		return SendUnauthMessage(playerid, "Você não está autorizado a usar este comando.");
+		return SendUnauthMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	if(!PrivateMessageEars{playerid})
 	{
@@ -5994,7 +5994,7 @@ CMD:pmears(playerid, params[])
 CMD:factionears(playerid, params[])
 {
 	if(PlayerData[playerid][pAdmin] < 4)
-		return SendUnauthMessage(playerid, "Você não está autorizado a usar este comando.");
+		return SendUnauthMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	if(!FactionEars{playerid})
 	{
@@ -6078,14 +6078,14 @@ CMD:veh(playerid, params[])
         return true;
     }
 
-    SendUnauthMessage(playerid, "Você não está autorizado a usar este comando.");
+    SendUnauthMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 	return true;
 }
 
 CMD:fuelveh(playerid, params[])
 {
 	if(PlayerData[playerid][pAdmin] < 1)
-	    return SendUnauthMessage(playerid, "Você não está autorizado a usar este comando.");
+	    return SendUnauthMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	new id;
 
@@ -6109,7 +6109,7 @@ CMD:fuelveh(playerid, params[])
 CMD:fillallcars(playerid, params[])
 {
 	if(PlayerData[playerid][pAdmin] < 3)
-	    return SendUnauthMessage(playerid, "Você não está autorizado a usar este comando.");
+	    return SendUnauthMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	foreach (new i : sv_vehicles)
 	{
@@ -6123,7 +6123,7 @@ CMD:fillallcars(playerid, params[])
 CMD:despawncars(playerid, params[])
 {
 	if(PlayerData[playerid][pAdmin] < 3)
-	    return SendUnauthMessage(playerid, "Você não está autorizado a usar este comando.");
+	    return SendUnauthMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	new vehicleCount;
 
@@ -6152,7 +6152,7 @@ CMD:despawncars(playerid, params[])
 CMD:despawncar(playerid, params[])
 {
 	if(PlayerData[playerid][pAdmin] < 3)
-	    return SendUnauthMessage(playerid, "Você não está autorizado a usar este comando.");
+	    return SendUnauthMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	new vehicleid;
 
@@ -6188,7 +6188,7 @@ CMD:despawncar(playerid, params[])
 CMD:testcar(playerid, params[])
 {
 	if(PlayerData[playerid][pAdmin] < 1)
-	    return SendUnauthMessage(playerid, "Você não está autorizado a usar este comando.");
+	    return SendUnauthMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	new vehicleid, id = -1;
 
@@ -6215,7 +6215,7 @@ CMD:testcar(playerid, params[])
 CMD:apark(playerid, params[])
 {
 	if(PlayerData[playerid][pAdmin] < 1)
-	    return SendUnauthMessage(playerid, "Você não está autorizado a usar este comando.");
+	    return SendUnauthMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	new vehicleid, id = -1;
 
@@ -6323,7 +6323,7 @@ CMD:saveveh(playerid, params[])
 CMD:deleteveh(playerid, params[])
 {
     if(PlayerData[playerid][pAdmin] < 4)
-	    return SendUnauthMessage(playerid, "Você não está autorizado a usar este comando.");
+	    return SendUnauthMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	new
 	    id = 0
@@ -6357,7 +6357,7 @@ CMD:deleteveh(playerid, params[])
 CMD:editveh(playerid, params[])
 {
 	if(PlayerData[playerid][pAdmin] < 4)
-	    return SendUnauthMessage(playerid, "Você não está autorizado a usar este comando.");
+	    return SendUnauthMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	new
 	    id,
@@ -6515,7 +6515,7 @@ CMD:editveh(playerid, params[])
 CMD:aunlockcar(playerid, params[])
 {
     if(PlayerData[playerid][pAdmin] < 1)
-		return SendUnauthMessage(playerid, "Você não está autorizado a usar este comando.");
+		return SendUnauthMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	new id = -1, str[128], vehicleid;
 
@@ -6583,7 +6583,7 @@ CMD:aunlockcar(playerid, params[])
 CMD:find(playerid, params[])
 {
     if(PlayerData[playerid][pAdmin] < 1)
-    	return SendUnauthMessage(playerid, "Você não está autorizado a usar este comando.");
+    	return SendUnauthMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
     new skin, weapon, vehicle, masked, Float:range_of_you;
 
@@ -6652,7 +6652,7 @@ CMD:find(playerid, params[])
 CMD:findcars(playerid, params[])
 {
     if(PlayerData[playerid][pAdmin] < 1)
-    	return SendUnauthMessage(playerid, "Você não está autorizado a usar este comando.");
+    	return SendUnauthMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	new model, occupied, Float:range_of_you;
 
@@ -6715,7 +6715,7 @@ CMD:findcars(playerid, params[])
 CMD:vehname(playerid, params[])
 {
 	if(PlayerData[playerid][pAdmin] < 2)
-		return SendErrorMessage(playerid, "Você não está autorizado a usar este comando.");
+		return SendErrorMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	new rcount;
 
@@ -6755,7 +6755,7 @@ CMD:vehname(playerid, params[])
 CMD:refunddrug(playerid, params[])
 {
     if(PlayerData[playerid][pAdmin] < 2)
-		return SendUnauthMessage(playerid, "Você não está autorizado a usar este comando.");
+		return SendUnauthMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	new userid;
 
@@ -6787,7 +6787,7 @@ CMD:refunddrug(playerid, params[])
 CMD:setwpackage(playerid, params[])
 {
     if(PlayerData[playerid][pAdmin] < 2)
-		return SendUnauthMessage(playerid, "Você não está autorizado a usar este comando.");
+		return SendUnauthMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	new userid, weaponid, ammo, slot;
 
@@ -6839,7 +6839,7 @@ CMD:setwpackage(playerid, params[])
 CMD:glog(playerid, params[])
 {
 	if(PlayerData[playerid][pAdmin] < 1)
-	    return SendUnauthMessage(playerid, "Você não está autorizado a usar este comando.");
+	    return SendUnauthMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	new dbid;
 
@@ -6877,7 +6877,7 @@ FUNX::SprayLogsResult(playerid, graffiti)
 CMD:log(playerid, params[])
 {
 	if(PlayerData[playerid][pAdmin] < 2)
-	    return SendUnauthMessage(playerid, "Você não está autorizado a usar este comando.");
+	    return SendUnauthMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	new pName[MAX_PLAYER_NAME], filter[64], userid = INVALID_PLAYER_ID;
 
@@ -7126,7 +7126,7 @@ Dialog:LogsResult(playerid, response, listitem, inputtext[])
 CMD:aconfig(playerid, params[])
 {
 	if(PlayerData[playerid][pAdmin] < 1)
-	    return SendUnauthMessage(playerid, "Você não está autorizado a usar este comando.");
+	    return SendUnauthMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	Dialog_Show(playerid, AdminConfig, DIALOG_STYLE_TABLIST_HEADERS, "Administator Configuration Panel",
 	"Name\tStatus\tInfo\n\
@@ -7146,7 +7146,7 @@ CMD:aconfig(playerid, params[])
 CMD:adminsys(playerid, params[])
 {
 	if(PlayerData[playerid][pAdmin] < 1)
-	    return SendUnauthMessage(playerid, "Você não está autorizado a usar este comando.");
+	    return SendUnauthMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	SendClientMessage(playerid, COLOR_GRAD1, "/adminsys is disabled.");
 	return true;
@@ -7155,7 +7155,7 @@ CMD:adminsys(playerid, params[])
 CMD:checkall(playerid, params[])
 {
 	if(PlayerData[playerid][pAdmin] < 1)
-	    return SendUnauthMessage(playerid, "Você não está autorizado a usar este comando.");
+	    return SendUnauthMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	SendClientMessage(playerid, COLOR_GRAD1, "/checkall is disabled.");
 	return true;
@@ -7164,7 +7164,7 @@ CMD:checkall(playerid, params[])
 CMD:killlog(playerid, params[])
 {
 	if(PlayerData[playerid][pAdmin] < 1)
-	    return SendUnauthMessage(playerid, "Você não está autorizado a usar este comando.");
+	    return SendUnauthMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	SendClientMessage(playerid, COLOR_GRAD1, "/killlog is disabled.");
 	return true;
@@ -7173,7 +7173,7 @@ CMD:killlog(playerid, params[])
 CMD:blacklist(playerid, params[])
 {
 	if(PlayerData[playerid][pAdmin] < 1)
-	    return SendUnauthMessage(playerid, "Você não está autorizado a usar este comando.");
+	    return SendUnauthMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	SendClientMessage(playerid, COLOR_GRAD1, "/blacklist is disabled.");
 	return true;
@@ -7182,7 +7182,7 @@ CMD:blacklist(playerid, params[])
 CMD:mark(playerid, params[])
 {
 	if(PlayerData[playerid][pAdmin] < 1)
-	    return SendUnauthMessage(playerid, "Você não está autorizado a usar este comando.");
+	    return SendUnauthMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	new marker;
 
@@ -7203,7 +7203,7 @@ CMD:mark(playerid, params[])
 CMD:gotomark(playerid, params[])
 {
 	if(PlayerData[playerid][pAdmin] < 1)
-	    return SendUnauthMessage(playerid, "Você não está autorizado a usar este comando.");
+	    return SendUnauthMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	new marker;
 
@@ -7227,7 +7227,7 @@ CMD:gotomark(playerid, params[])
 CMD:up(playerid, params[])
 {
 	if(PlayerData[playerid][pAdmin] < 1)
-		return SendErrorMessage(playerid, "Você não está autorizado a usar este comando.");
+		return SendErrorMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	new Float:slx, Float:sly, Float:slz;
 	GetPlayerPos(playerid, slx, sly, slz);
@@ -7238,7 +7238,7 @@ CMD:up(playerid, params[])
 CMD:down(playerid, params[])
 {
 	if(PlayerData[playerid][pAdmin] < 1)
-		return SendErrorMessage(playerid, "Você não está autorizado a usar este comando.");
+		return SendErrorMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	new Float:slx, Float:sly, Float:slz;
 	GetPlayerPos(playerid, slx, sly, slz);
@@ -7249,7 +7249,7 @@ CMD:down(playerid, params[])
 CMD:left(playerid, params[])
 {
 	if(PlayerData[playerid][pAdmin] < 1)
-		return SendErrorMessage(playerid, "Você não está autorizado a usar este comando.");
+		return SendErrorMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	new Float:slx, Float:sly, Float:slz;
 	GetPlayerPos(playerid, slx, sly, slz);
@@ -7260,7 +7260,7 @@ CMD:left(playerid, params[])
 CMD:right(playerid, params[])
 {
 	if(PlayerData[playerid][pAdmin] < 1)
-		return SendErrorMessage(playerid, "Você não está autorizado a usar este comando.");
+		return SendErrorMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	new Float:slx, Float:sly, Float:slz;
 	GetPlayerPos(playerid, slx, sly, slz);
@@ -7273,7 +7273,7 @@ YCMD:ah(playerid, params[], help) = ahelp;
 CMD:ahelp(playerid, params[])
 {
 	if(PlayerData[playerid][pAdmin] < 1)
-	    return SendUnauthMessage(playerid, "Você não está autorizado a usar este comando.");
+	    return SendUnauthMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	if(PlayerData[playerid][pAdmin] >= 1) // Junior Admin
 	{
@@ -7329,7 +7329,7 @@ CMD:ahelp(playerid, params[])
 CMD:signalcmds(playerid, params[])
 {
 	if(PlayerData[playerid][pAdmin] < 1337)
-    	return SendErrorMessage(playerid, "Você não está autorizado a usar este comando.");
+    	return SendErrorMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	SendClientMessage(playerid, COLOR_GRAD3, "[Level 1337]: /createsignal, /editsignal, /destroysignal");
 	return true;
@@ -7338,7 +7338,7 @@ CMD:signalcmds(playerid, params[])
 CMD:factioncmds(playerid, params[])
 {
 	if(PlayerData[playerid][pAdmin] < 4)
-    	return SendErrorMessage(playerid, "Você não está autorizado a usar este comando.");
+    	return SendErrorMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	SendClientMessage(playerid, COLOR_GRAD3, "[Level 4]: /viewfactions /createfaction, /setfaction, /destroyfaction");
 	return true;
@@ -7347,7 +7347,7 @@ CMD:factioncmds(playerid, params[])
 CMD:vehcmds(playerid, params[])
 {
 	if(PlayerData[playerid][pAdmin] < 4)
-    	return SendErrorMessage(playerid, "Você não está autorizado a usar este comando.");
+    	return SendErrorMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	SendClientMessage(playerid, COLOR_GRAD3, "[Level 4]: /saveveh /deleteveh /editveh");
 	return true;
@@ -7356,7 +7356,7 @@ CMD:vehcmds(playerid, params[])
 CMD:gatecmds(playerid, params[])
 {
 	if(PlayerData[playerid][pAdmin] < 1337)
-    	return SendErrorMessage(playerid, "Você não está autorizado a usar este comando.");
+    	return SendErrorMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	SendClientMessage(playerid, COLOR_GRAD3, "[Level 1337]: {C3C3C3}/makegate /dupgate /removegate /editgate /whatgate /showgates");
 	return true;
@@ -7365,7 +7365,7 @@ CMD:gatecmds(playerid, params[])
 CMD:movedoorcmds(playerid, params[])
 {
 	if(PlayerData[playerid][pAdmin] < 1337)
-    	return SendErrorMessage(playerid, "Você não está autorizado a usar este comando.");
+    	return SendErrorMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	SendClientMessage(playerid, COLOR_GRAD3, "[Level 1337]: {C3C3C3}/makemovedoor /dupmovedoor /removemovedoor /editmovedoor /whatmovedoor /showmovedoors");
 	return true;
@@ -7374,7 +7374,7 @@ CMD:movedoorcmds(playerid, params[])
 CMD:housecmds(playerid, params[])
 {
 	if(PlayerData[playerid][pAdmin] < 1337)
-    	return SendErrorMessage(playerid, "Você não está autorizado a usar este comando.");
+    	return SendErrorMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	SendClientMessage(playerid, COLOR_GRAD3, "[Level 1337]: /createprop /removeprop /setprop /houseenter /houseexit /asellhouse /gotohouse /serverhouses");
 	return true;
@@ -7383,7 +7383,7 @@ CMD:housecmds(playerid, params[])
 CMD:businesscmds(playerid, params[])
 {
 	if(PlayerData[playerid][pAdmin] < 1337)
-    	return SendErrorMessage(playerid, "Você não está autorizado a usar este comando.");
+    	return SendErrorMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	SendClientMessage(playerid, COLOR_GRAD3, "[Level 1337]: /makebusiness /removebusiness /editbusiness /businessenter /gotobusiness /serverbusinesses /asellbusiness");
 	SendClientMessage(playerid, COLOR_GRAD3, "[Level 1337]: /businessint /businessexit /biztypes /whatbusiness /showbusinesses /businessex1 /businessex2 /businessex3");
@@ -7393,7 +7393,7 @@ CMD:businesscmds(playerid, params[])
 CMD:telecmds(playerid, params[])
 {
 	if(PlayerData[playerid][pAdmin] < 3)
-    	return SendErrorMessage(playerid, "Você não está autorizado a usar este comando.");
+    	return SendErrorMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	SendClientMessage(playerid, COLOR_GRAD3, "[Level 3]: /teles /maketele /removetele /serverteles");
 	return true;
@@ -7402,7 +7402,7 @@ CMD:telecmds(playerid, params[])
 CMD:intpoints(playerid, params[])
 {
 	if(PlayerData[playerid][pAdmin] < 1)
-	    return SendUnauthMessage(playerid, "Você não está autorizado a usar este comando.");
+	    return SendUnauthMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	gstr[0] = EOS;
 
@@ -7420,7 +7420,7 @@ CMD:intpoints(playerid, params[])
 CMD:streamer(playerid, params[])
 {
 	if(PlayerData[playerid][pAdmin] < 1337)
-		return SendUnauthMessage(playerid, "Você não está autorizado a usar este comando.");
+		return SendUnauthMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	SendClientMessageEx(playerid, COLOR_CYAN, "Visible objects: %d", Streamer_GetVisibleItems(STREAMER_TYPE_OBJECT));
 	return true;
@@ -7429,7 +7429,7 @@ CMD:streamer(playerid, params[])
 /*CMD:ecmd(playerid, params[])
 {
 	if(PlayerData[playerid][pAdmin] < 1337)
-		return SendUnauthMessage(playerid, "Você não está autorizado a usar este comando.");
+		return SendUnauthMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	new userid, command[64];
 
@@ -7454,7 +7454,7 @@ CMD:streamer(playerid, params[])
 CMD:as(playerid, params[])
 {
 	if(PlayerData[playerid][pAdmin] < 1)
-		return SendUnauthMessage(playerid, "Você não está autorizado a usar este comando.");
+		return SendUnauthMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	new
 	    userid
@@ -7506,7 +7506,7 @@ CMD:as(playerid, params[])
 CMD:createatm(playerid, params[])
 {
 	if(PlayerData[playerid][pAdmin] != 4)
-		return SendUnauthMessage(playerid, "Você não está autorizado a usar este comando.");
+		return SendUnauthMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	new ATM = FindFreeATM();
 
@@ -7528,7 +7528,7 @@ CMD:createatm(playerid, params[])
 CMD:gotoatm(playerid, params[])
 {
 	if(PlayerData[playerid][pAdmin] != 4)
-		return SendUnauthMessage(playerid, "Você não está autorizado a usar este comando.");
+		return SendUnauthMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	new ATM;
 
@@ -7547,7 +7547,7 @@ CMD:gotoatm(playerid, params[])
 CMD:deleteatm(playerid, params[])
 {
 	if(PlayerData[playerid][pAdmin] != 4)
-		return SendUnauthMessage(playerid, "Você não está autorizado a usar este comando.");
+		return SendUnauthMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	DeletingATM{playerid} = true;
     SelectObject(playerid);
@@ -7559,7 +7559,7 @@ CMD:deleteatm(playerid, params[])
 CMD:editatm(playerid, params[])
 {
 	if(PlayerData[playerid][pAdmin] != 4)
-		return SendUnauthMessage(playerid, "Você não está autorizado a usar este comando.");
+		return SendUnauthMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
     SelectObject(playerid);
 	return true;
@@ -7568,7 +7568,7 @@ CMD:editatm(playerid, params[])
 CMD:netstats(playerid, params[])
 {
 	if(PlayerData[playerid][pAdmin] < 4)
-		return SendUnauthMessage(playerid, "Você não está autorizado a usar este comando.");
+		return SendUnauthMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	new stats[400 + 1];
     GetNetworkStats(stats, sizeof(stats));
@@ -7581,7 +7581,7 @@ YCMD:sstats(playerid, params[], help) = serverstats;
 CMD:serverstats(playerid, params[])
 {
     if(PlayerData[playerid][pAdmin] < 4)
-		return SendUnauthMessage(playerid, "Você não está autorizado a usar este comando.");
+		return SendUnauthMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	new
 	    p_ajailed,
@@ -7635,7 +7635,7 @@ CMD:serverstats(playerid, params[])
 CMD:tickrate(playerid, params[])
 {
     if(PlayerData[playerid][pAdmin] < 4)
-		return SendUnauthMessage(playerid, "Você não está autorizado a usar este comando.");
+		return SendUnauthMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 			
 	SendClientMessageEx(playerid, COLOR_WHITE, "Current server tickrate is: %d", GetServerTickRate());
 	return true;
@@ -7644,7 +7644,7 @@ CMD:tickrate(playerid, params[])
 CMD:runquery(playerid, params[])
 {
     if(PlayerData[playerid][pAdmin] < 1337)
-		return SendUnauthMessage(playerid, "Você não está autorizado a usar este comando.");
+		return SendUnauthMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	if(isnull(params) || strlen(params) < 3)
 	    return SendErrorMessage(playerid, "Query is too short.");
@@ -7659,7 +7659,7 @@ CMD:runquery(playerid, params[])
 CMD:mysqlstats(playerid, params[])
 {
     if(PlayerData[playerid][pAdmin] < 1337)
-		return SendUnauthMessage(playerid, "Você não está autorizado a usar este comando.");
+		return SendUnauthMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	gquery[0] = EOS;
 	mysql_stat(gquery);
@@ -7678,7 +7678,7 @@ CMD:mysqlstats(playerid, params[])
 CMD:watchpm(playerid, params[])
 {
     if(PlayerData[playerid][pAdmin] < 2)
-		return SendUnauthMessage(playerid, "Você não está autorizado a usar este comando.");
+		return SendUnauthMessage(playerid, "Vocï¿½ nï¿½o estï¿½ autorizado a usar este comando.");
 
 	new
 		userid
