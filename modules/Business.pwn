@@ -1,4 +1,4 @@
-// Defines TESTE GIT
+// Defines teste 123 no pc windows
 
 #define MAX_BUSINESS (60)
 #define MAX_BUSINESS_ITEM (12)
@@ -123,7 +123,7 @@ Business_FoodMenu(playerid)
 	    {
 			ShowPlayerRestaurantMenu(playerid, id);
 		}
-		else SendErrorMessage(playerid, "Vocï¿½ nï¿½o estï¿½ em um restaurante.");
+		else SendErrorMessage(playerid, "Você não está em um restaurante.");
 	}	
 }
 
@@ -134,10 +134,10 @@ Business_PrintInfo(playerid, targetid)
 	SendClientMessage(playerid, COLOR_GREEN, "_______________________________________");
 	SendClientMessageEx(playerid, COLOR_GREEN, "*** %s ***", BusinessData[targetid][bInfo]);
 
-	SendClientMessageEx(playerid, COLOR_WHITE, "Endereï¿½o: %s, San Andreas", ReturnLocation(playerid));
+	SendClientMessageEx(playerid, COLOR_WHITE, "Endereço: %s, San Andreas", ReturnLocation(playerid));
 	SendClientMessageEx(playerid, COLOR_WHITE, "Dono:[%s] Level:[%d] Valor:[%d] Tipo:[%d] Trancada:[%s] ID: [%d]", BusinessData[targetid][bOwner], BusinessData[targetid][bLevelNeeded], BusinessData[targetid][bBuyPrice], BusinessData[targetid][bType], (BusinessData[targetid][bLocked]) ? ("Yes") : ("No"), targetid);
-	SendClientMessageEx(playerid, COLOR_WHITE, "Upgardes:[0] Cofre:[%s] Preï¿½o da entrada:[%s]", FormatNumber(BusinessData[targetid][bTill]), FormatNumber(BusinessData[targetid][bEntranceCost]));
-	SendClientMessageEx(playerid, COLOR_WHITE, "Informaï¿½ï¿½es Tï¿½cnicas: 1 Carga = %d Produtos. Atualmente: Produtos[%d / %d], Preï¿½o da Carga[%d]", GetProductPerCargo(BusinessData[targetid][bType]), BusinessData[targetid][bProducts], BusinessData[targetid][bMaxProducts], BusinessData[targetid][bPriceProd]);
+	SendClientMessageEx(playerid, COLOR_WHITE, "Upgardes:[0] Cofre:[%s] Preço da entrada:[%s]", FormatNumber(BusinessData[targetid][bTill]), FormatNumber(BusinessData[targetid][bEntranceCost]));
+	SendClientMessageEx(playerid, COLOR_WHITE, "Informações Técnicas: 1 Carga = %d Produtos. Atualmente: Produtos[%d / %d], Preço da Carga[%d]", GetProductPerCargo(BusinessData[targetid][bType]), BusinessData[targetid][bProducts], BusinessData[targetid][bMaxProducts], BusinessData[targetid][bPriceProd]);
 	//SendClientMessageEx(playerid, COLOR_WHITE, "Technical Info: 1 Cargo = %d Products. Currently: Products[%d / %d], CargoPrice[%d]", GetProductPerCargo(BusinessData[targetid][bType]), BusinessData[targetid][bProducts], BusinessData[targetid][bMaxProducts], BusinessData[targetid][bPriceProd]);
 
 	SendClientMessage(playerid, COLOR_GREEN, "_______________________________________");
